@@ -6,6 +6,7 @@ import sampleData from '../sample-data';
 
 import Current from './Current';
 import Forecast from './Forecast';
+import Hourly from './Hourly';
 
 class App extends Component {
   constructor() {
@@ -24,17 +25,16 @@ class App extends Component {
     getLocation
       .then(res => {
         const { lat, lon } = res;
-        // const lat = 40.730610, lon = -73.935242;
         this.setState({
           location: {
             lat,
             lon
-          }, loading: false
+          }
         });
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&sensor=true`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&sensor=false`)
           .then(res => res.json())
           .then(json => {
-            this.setState({ cityName: json.results[0].address_components[2].short_name });
+            this.setState({ cityName: json.results[0].address_components[2].short_name, loading: false });
           });
         const url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}?lang=pl&units=si`;
         // fetchJsonp(url)
@@ -59,7 +59,6 @@ class App extends Component {
           this.state.loading 
           ? <div id="loading"></div>
           : <div className="container">
-              <h1>Weather App</h1>
               <Current 
                 weather={weather.currently} 
                 cityName={this.state.cityName}
@@ -67,6 +66,11 @@ class App extends Component {
               <Forecast 
                 weather={weather.daily}
               />
+
+              <Hourly 
+                weather={weather.hourly.data}
+              />
+
           </div>
         }
       </div>

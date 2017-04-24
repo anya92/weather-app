@@ -17,3 +17,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+i {
+  font-size: 50px;
+  color: purple;
+  margin: 10px;
+}
+
+.single-day {
+  i {
+    font-size: 20px;
+  }
+}
+
+.hourly {
+  i {
+    font-size: 25px;
+    display: block;
+  }
+}

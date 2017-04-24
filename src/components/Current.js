@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import { getWeatherIcon } from '../icons.js';
 
 class Current extends Component {
   render() {
@@ -10,6 +11,7 @@ class Current extends Component {
         <p>{moment(date).locale('pl').format('dddd')}, {moment(date).locale('pl').format('LL')}</p>
         <p>{cityName}</p>
         <p>{weather.summary}</p>
+        <i className={getWeatherIcon(weather.icon)}></i>
       </div>
     );
   }
