@@ -63,14 +63,12 @@ class App extends Component {
                 weather={weather.currently} 
                 cityName={this.state.cityName}
               />
+              <Hourly 
+                weather={weather.hourly.data.slice(0, 12)}
+              />
               <Forecast 
                 weather={weather.daily}
               />
-
-              <Hourly 
-                weather={weather.hourly.data}
-              />
-
           </div>
         }
       </div>
