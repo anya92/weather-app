@@ -1,0 +1,31 @@
+{
+  "name": "weather-app",
+  "version": "0.1.0",
+  "author": "Ania Brajtkopf",
+  "private": true,
+  "scripts": {
+    "build-css": "node-sass src/styles -o src/styles",
+    "watch-css": "npm run build-css && node-sass src/styles -o src/styles --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "moment": "^2.18.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
+    "fetch-jsonp": "^1.0.6",
+    "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
+    "react-scripts": "0.9.5"
+  }
+}
