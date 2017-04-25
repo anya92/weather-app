@@ -1,6 +1,24 @@
+$background-color: #FFFFFF;
+$text-color: #68656F;
+$icon-color: #E49683;
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./Quicksand-Regular.ttf');
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: 'Quicksand';
+  font-size: 18px;
+}
+
+// Loading circle //
+
 #loading {
-  border: 8px solid #e3e3e3; 
-  border-top: 8px solid #232323; 
+  border: 8px solid $text-color; 
+  border-top: 8px solid $icon-color; 
   border-radius: 50%;
   position: absolute;
   margin: auto;
@@ -18,16 +36,44 @@
   to { transform: rotate(360deg); }
 }
 
-i {
+// Current weather //
+
+.current {
+  // border: 1px solid $icon-color;
+  margin-top: 20px;
+  padding: 5px;
+  .time {
+    font-size: 1.4em;
+  }
+  .city-name {
+    font-size: 2.5em;
+    // font-weight: bolder;
+  }
+  .summary {
+    font-size: 1.1em;
+    color: lighten($text-color, 10%);
+  }
+  .temp {
+    font-size: 3.8em;
+  }
+  i.wi {
+    font-size: 5em;
+    margin: 20px;
+    font-weight: 100; 
+  }
+}
+i.wi {
   font-size: 50px;
-  color: purple;
+  color: $icon-color;
   margin: 10px;
 }
+
 
 .single-day {
   i {
     font-size: 20px;
   }
+  color: black;
 }
 
 .hourly {
@@ -37,7 +83,7 @@ i {
   }
 }
 
-table {
+.table {
   // border: 1px solid black;
   i {
     font-size: 25px;

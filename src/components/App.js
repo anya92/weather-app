@@ -37,6 +37,7 @@ class App extends Component {
             this.setState({ cityName: json.results[0].address_components[2].short_name, loading: false });
           });
         const url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}?lang=pl&units=si`;
+        console.log(url);
         // fetchJsonp(url)
         //   .then(res => res.json())
         //   .then(json => {
@@ -59,16 +60,13 @@ class App extends Component {
           this.state.loading 
           ? <div id="loading"></div>
           : <div className="container">
+          
               <Current 
                 weather={weather.currently} 
                 cityName={this.state.cityName}
               />
-              <Hourly 
-                weather={weather.hourly.data.slice(0, 12)}
-              />
-              <Forecast 
-                weather={weather.daily}
-              />
+             
+              
           </div>
         }
       </div>
@@ -77,3 +75,10 @@ class App extends Component {
 }
 
 export default App;
+
+ // <Hourly 
+ //                weather={weather.hourly.data.slice(0, 24)}
+ //              />
+// <Forecast 
+//                 weather={weather.daily}
+//               />

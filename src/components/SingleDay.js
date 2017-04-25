@@ -9,7 +9,7 @@ class SingleDay extends Component {
     const sunriseTime = new Date(day.sunriseTime * 1000);
     const sunsetTime = new Date(day.sunsetTime * 1000);
     return (
-      <div className="single-day">
+      <div className="single-day list-group-item">
         <p><strong>{moment(date).locale('pl').format('dddd')}</strong><br />
         <span>{day.summary}</span></p>
         <i className={getWeatherIcon(day.icon)}></i>
@@ -20,9 +20,6 @@ class SingleDay extends Component {
         <i className="wi wi-strong-wind"></i>{day.windSpeed} m/s
         <i className="wi wi-barometer"></i>{day.pressure} hPa
         <i className="wi wi-raindrops"></i>{Math.round(day.precipProbability * 100)}%
-
-
-
       </div>
     );
   }
