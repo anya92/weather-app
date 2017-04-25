@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import { getWeatherIcon } from '../icons.js';
 import Details from './Details';
 
-class Hourly extends Component {
+class Aside extends Component {
   render() {
     const { weather } = this.props; 
     const settings = {
@@ -14,10 +14,12 @@ class Hourly extends Component {
     return (
       <div className="aside">
         <Slider {...settings}>
-          <div><Details /></div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
+          <div className="slide">
+            <Details weather={this.props.details}/>
+          </div>
+          <div className="slide">2</div>
+          <div className="slide">3</div>
+          <div className="slide">4</div>
 
         </Slider>
       </div>
@@ -25,7 +27,7 @@ class Hourly extends Component {
   }
 }
 
-export default Hourly;
+export default Aside;
 
 
  // <div>

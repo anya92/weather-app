@@ -6,7 +6,7 @@ import sampleData from '../sample-data';
 
 import Current from './Current';
 import Forecast from './Forecast';
-import Hourly from './Hourly';
+import Aside from './Aside';
 
 class App extends Component {
   constructor() {
@@ -71,8 +71,9 @@ class App extends Component {
               />
               </div>
               <div className="col-md-4">
-                <Hourly 
+                <Aside 
                 weather={weather.hourly.data.slice(0, 24)}
+                details={weather.currently}
               />
               </div>
                

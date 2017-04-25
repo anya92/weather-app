@@ -49,7 +49,7 @@ body {
 // Current weather //
 
 .current {
-  border: 1px solid $icon-color;
+  // border: 1px solid $icon-color;
   margin-top: 20px;
   padding: 5px;
   .time {
@@ -85,7 +85,7 @@ body {
 // Forecast //
 
 .forecast {
-  border: 1px solid $icon-color;
+  // border: 1px solid $icon-color;
   margin-top: 20px;
   padding: 10px;
 }
@@ -127,7 +127,33 @@ body {
 // Aside //
 
 .aside {
-  border: 1px solid $icon-color;
+  // border: 1px solid $icon-color;
+
   margin-top: 20px;
   min-height: 450px;
+  .slide {
+    text-align: center;
+    min-height: 400px;
+    padding: 10px;
+  }
+}
+
+.details {
+  div {
+    padding: 10px;
+    
+  }
+  h3 {
+    color: $icon-color;
+    font-size: 1.4em;
+    font-family: 'Quicksand Regular';
+  }
+  h4 {
+    font-family: 'Quicksand Regular';
+  }
+  i.wi {
+    margin-right: 5px;
+    font-size: 1.2em;
+    color: $icon-color;
+  }
 }

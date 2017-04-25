@@ -13,7 +13,9 @@ class Current extends Component {
         <p className="summary">{weather.summary}</p>
         <div className="row">
           <p className="col-xs-6 temp">{Math.floor(weather.temperature)}&deg;C</p>
-          <i className={getWeatherIcon(weather.icon)}></i>
+          <div className="col-xs-6">
+            <i className={getWeatherIcon(weather.icon)}></i>
+          </div>  
         </div>
         
       </div>
