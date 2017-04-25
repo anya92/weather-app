@@ -1,6 +1,8 @@
 $background-color: #FFFFFF;
 $text-color: #68656F;
 $icon-color: #E49683;
+@import "../../node_modules/slick-carousel/slick/slick.css";
+@import "../../node_modules/slick-carousel/slick/slick-theme.css"; 
 
 @font-face {
   font-family: 'Quicksand Light';
@@ -18,7 +20,10 @@ body {
   font-family: 'Quicksand Light';
   font-size: 18px;
 }
-
+.col-md-8, .col-md-4 {
+  padding-left: 0;
+  padding-right: 0;
+}
 // Loading circle //
 
 #loading {
@@ -44,7 +49,7 @@ body {
 // Current weather //
 
 .current {
-  // border: 1px solid $icon-color;
+  border: 1px solid $icon-color;
   margin-top: 20px;
   padding: 5px;
   .time {
@@ -80,7 +85,7 @@ body {
 // Forecast //
 
 .forecast {
-  // border: 1px solid $icon-color;
+  border: 1px solid $icon-color;
   margin-top: 20px;
   padding: 10px;
 }
@@ -104,18 +109,25 @@ body {
   // color: $text-color;
 }
 
-.hourly {
-  i {
-    font-size: 25px;
-    display: block;
-  }
+// .hourly {
+//   i {
+//     font-size: 25px;
+//     display: block;
+//   }
+// }
+
+// .table {
+//   // border: 1px solid black;
+//   i {
+//     font-size: 25px;
+//   }
+// }
+
+
+// Aside //
+
+.aside {
+  border: 1px solid $icon-color;
+  margin-top: 20px;
+  min-height: 450px;
 }
-
-.table {
-  // border: 1px solid black;
-  i {
-    font-size: 25px;
-  }
-}
-
-

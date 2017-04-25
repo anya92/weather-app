@@ -6,7 +6,7 @@ class Forecast extends Component {
     const { weather } = this.props;
     console.log(weather);
     return (
-      <div className="forecast col-md-8">
+      <div className="forecast">
         <div className="row">
         {
           weather.map((day, i) => {

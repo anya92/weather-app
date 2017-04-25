@@ -7,7 +7,7 @@ class Current extends Component {
     const { weather, cityName } = this.props;
     const date = new Date(weather.time * 1000);
     return (
-      <div className="current col-md-6">
+      <div className="current">
         <p className="time">{(moment(date).locale('pl').format('dddd')).toUpperCase()},<br/>{moment(date).locale('pl').format('LL')}</p>
         <h1 className="city-name">{cityName}</h1>
         <p className="summary">{weather.summary}</p>

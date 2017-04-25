@@ -61,14 +61,22 @@ class App extends Component {
           this.state.loading 
           ? <div id="loading"></div>
           : <div className="container">
-          
+              <div className="col-md-8">
               <Current 
                 weather={weather.currently} 
                 cityName={this.state.cityName}
               />
-             <Forecast 
+              <Forecast 
                 weather={weather.daily.data.slice(1,7)}
               />
+              </div>
+              <div className="col-md-4">
+                <Hourly 
+                weather={weather.hourly.data.slice(0, 24)}
+              />
+              </div>
+               
+             
               
           </div>
         }
@@ -79,7 +87,5 @@ class App extends Component {
 
 export default App;
 
- // <Hourly 
- //                weather={weather.hourly.data.slice(0, 24)}
- //              />
+
 
