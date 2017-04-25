@@ -25,6 +25,7 @@ class App extends Component {
     getLocation
       .then(res => {
         const { lat, lon } = res;
+        // const lat = 50.34802, lon = 18.93282;
         this.setState({
           location: {
             lat,
@@ -65,7 +66,9 @@ class App extends Component {
                 weather={weather.currently} 
                 cityName={this.state.cityName}
               />
-             
+             <Forecast 
+                weather={weather.daily.data.slice(1,7)}
+              />
               
           </div>
         }
@@ -79,6 +82,4 @@ export default App;
  // <Hourly 
  //                weather={weather.hourly.data.slice(0, 24)}
  //              />
-// <Forecast 
-//                 weather={weather.daily}
-//               />
+

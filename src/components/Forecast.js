@@ -4,16 +4,16 @@ import SingleDay from './SingleDay';
 class Forecast extends Component {
   render() {
     const { weather } = this.props;
+    console.log(weather);
     return (
-      <div>
-        <h2>Prognoza</h2>
-        <ul className="list-group">
+      <div className="forecast col-md-8">
+        <div className="row">
         {
-          weather.data.map((day, i) => {
+          weather.map((day, i) => {
             return <SingleDay key={i} day={day}/>;
           })
         }
-        </ul>
+        </div>
       </div>
     );
   }
