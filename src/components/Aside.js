@@ -3,10 +3,16 @@ import moment from 'moment';
 import Slider from 'react-slick';
 import { getWeatherIcon } from '../icons.js';
 import Details from './Details';
+import ChartTemp from './ChartTemp';
 
 class Aside extends Component {
   render() {
     const { weather } = this.props; 
+    let hourTemp = [], hours = [];
+    weather.forEach(hour => {
+      hourTemp.push(hour.temperature);
+      hours.push(moment(hour.time * 1000).locale('pl').format('LT'));
+    });
     const settings = {
       dots: true,
       arrows: true
@@ -17,7 +23,9 @@ class Aside extends Component {
           <div className="slide">
             <Details weather={this.props.details}/>
           </div>
-          <div className="slide">2</div>
+          <div className="slide">
+            <ChartTemp temperature={hourTemp} hours={hours}/>
+          </div>
           <div className="slide">3</div>
           <div className="slide">4</div>
 

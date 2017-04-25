@@ -4,9 +4,9 @@ import SingleDay from './SingleDay';
 class Forecast extends Component {
   render() {
     const { weather } = this.props;
-    console.log(weather);
     return (
       <div className="forecast">
+      <h2>Prognoza</h2>
         <div className="row">
         {
           weather.map((day, i) => {

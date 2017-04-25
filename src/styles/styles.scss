@@ -86,8 +86,12 @@ body {
 
 .forecast {
   // border: 1px solid $icon-color;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px;
+  h2 {
+    font-family: 'Quicksand Regular';
+
+  }
 }
 
 .single-day {
@@ -128,12 +132,12 @@ body {
 
 .aside {
   // border: 1px solid $icon-color;
-
+  cursor: pointer;
   margin-top: 20px;
-  min-height: 450px;
+  max-height: 450px;
   .slide {
     text-align: center;
-    min-height: 400px;
+    max-height: 400px;
     padding: 10px;
   }
 }
@@ -155,5 +159,16 @@ body {
     margin-right: 5px;
     font-size: 1.2em;
     color: $icon-color;
+  }
+}
+
+.chart {
+    padding: 10px;
+
+  h3 {
+    color: $icon-color;
+    font-size: 1.4em;
+    font-family: 'Quicksand Regular';
+    margin-bottom: 20px;
   }
 }

@@ -12,7 +12,7 @@ const Details = (props) => {
           <i className="wi wi-thermometer"></i> {Math.floor(weather.apparentTemperature)}&deg;C
         </div>
         <div className="col-xs-6">
-          <h4>Szanse na {precipType}</h4>
+          <h4>Szanse na <br/> {precipType}</h4>
           <i className="wi wi-raindrops"></i> {Math.round(weather.precipProbability * 100)}%
         </div>
       </div>

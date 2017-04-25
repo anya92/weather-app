@@ -38,7 +38,7 @@ class App extends Component {
             this.setState({ cityName: json.results[0].address_components[2].short_name, loading: false });
           });
         const url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}?lang=pl&units=si`;
-        console.log(url);
+        // console.log(url);
         // fetchJsonp(url)
         //   .then(res => res.json())
         //   .then(json => {
