@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import Slider from 'react-slick-with-mobile-in-mind';
 
 import Details from './Details';

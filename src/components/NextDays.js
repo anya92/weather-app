@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import { getWeatherIcon } from '../icons.js';
 
 class NextDays extends Component {
   constructor() {
     super();
 
     this.state = {
-      display: 'temp'
+      display: ''
     };
   }
 

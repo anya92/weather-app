@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
 import { getLocation } from '../locationApi';
 import { API_KEY } from '../config';
-import sampleData from '../sample-data';
 
 import Current from './Current';
 import Forecast from './Forecast';
@@ -17,7 +16,7 @@ class App extends Component {
       location: {},
       error: '',
       cityName: '',
-      weather: sampleData
+      weather: ''
     };
   }
 
@@ -25,7 +24,6 @@ class App extends Component {
     getLocation
       .then(res => {
         const { lat, lon } = res;
-        // const lat = 50.34802, lon = 18.93282;
         this.setState({
           location: {
             lat,
@@ -35,19 +33,18 @@ class App extends Component {
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&sensor=false`)
           .then(res => res.json())
           .then(json => {
-            this.setState({ cityName: json.results[0].address_components[2].short_name, loading: false });
+            this.setState({ cityName: json.results[0].address_components[2].short_name});
           });
         const url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}?lang=pl&units=si`;
-        // console.log(url);
-        // fetchJsonp(url)
-        //   .then(res => res.json())
-        //   .then(json => {
-        //     this.setState({ 
-        //       loading: false,
-        //       weather: json 
-        //     });
-        //   })
-        //   .catch(error => this.setState({ error })); 
+        fetchJsonp(url)
+          .then(res => res.json())
+          .then(json => {
+            this.setState({ 
+              loading: false,
+              weather: json 
+            });
+          })
+          .catch(error => this.setState({ error })); 
       })
       .catch(error => this.setState({ error }));
   }
