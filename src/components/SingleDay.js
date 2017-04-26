@@ -5,15 +5,14 @@ import { getWeatherIcon } from '../icons.js';
 class SingleDay extends Component {
   render() {
     const { day } = this.props;
-    console.log(day);
     const date = new Date(day.time * 1000);
-    const sunriseTime = new Date(day.sunriseTime * 1000);
-    const sunsetTime = new Date(day.sunsetTime * 1000);
+    // const sunriseTime = new Date(day.sunriseTime * 1000);
+    // const sunsetTime = new Date(day.sunsetTime * 1000);
     return (
       <div className="single-day col-xs-6 col-md-2">
         <p className="day-name">{(moment(date).locale('pl').format('ddd')).toUpperCase()}</p>
         <i className={getWeatherIcon(day.icon)}></i>
-        <p className="temp">{Math.floor(day.temperatureMax)}&deg;C</p>
+        <p className="temp">{Math.round(day.temperatureMax)}&deg;C</p>
       </div>
     );
   }

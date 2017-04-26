@@ -67,6 +67,7 @@ class App extends Component {
                 cityName={this.state.cityName}
               />
               <Forecast 
+                summary={weather.daily.summary}
                 weather={weather.daily.data.slice(1,7)}
               />
               </div>
@@ -76,9 +77,6 @@ class App extends Component {
                 details={weather.currently}
               />
               </div>
-               
-             
-              
           </div>
         }
       </div>

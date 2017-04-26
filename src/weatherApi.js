@@ -7,6 +7,7 @@ export const getLocation = new Promise((resolve, reject) => {
       });
     }, error => {
       reject(error.message);
+      console.log(error.message);
     });
   } else {
     reject('Geolocation is not supported by this browser.');

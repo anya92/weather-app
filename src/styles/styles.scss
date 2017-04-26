@@ -20,10 +20,7 @@ body {
   font-family: 'Quicksand Light';
   font-size: 18px;
 }
-.col-md-8, .col-md-4 {
-  padding-left: 0;
-  padding-right: 0;
-}
+
 // Loading circle //
 
 #loading {
@@ -50,35 +47,46 @@ body {
 
 .current {
   // border: 1px solid $icon-color;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 5px;
   .time {
     font-size: 1.3em;
   }
   .city-name {
-    font-size: 2.6em;
+    font-size: 2.7em;
     font-family: 'Quicksand Regular';
     margin-top: 5px;
+  }
+  .fa-map-marker {
+    font-size: 0.7em;
+    color: darken($text-color, 10%);
+    margin-right: 5px;
+    // padding: 2px;
   }
   .summary {
     font-size: 1.1em;
     color: lighten($text-color, 10%);
   }
   .temp {
-    font-size: 5.2em;
+    font-size: 4.5em;
     font-weight: 100;
     color: $icon-color; 
     padding-left: 10px;
-
+    @media all and (min-width: 768px) {
+      font-size: 5.5em;
+    }
   }
   i.wi {
-    font-size: 5.4em;
+    font-size: 4.5em;
     color: $icon-color;
     font-weight: 100;
     margin: 20px;
-    opacity: 0.8; 
+    // opacity: 0.8; 
     padding: 5px;
     padding-left: 0px;
+    @media all and (min-width: 768px) {
+      font-size: 5.5em;
+    }
   }
 }
 
@@ -86,11 +94,15 @@ body {
 
 .forecast {
   // border: 1px solid $icon-color;
-  margin-top: 10px;
-  padding: 10px;
+  // margin-top: 10px;
+  padding: 5px;
   h2 {
     font-family: 'Quicksand Regular';
-
+    margin-top: 5px;
+  }
+  hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 
@@ -110,35 +122,21 @@ body {
     font-size: 1em;
     margin-top: 10px;
   }
-  // color: $text-color;
+  
 }
-
-// .hourly {
-//   i {
-//     font-size: 25px;
-//     display: block;
-//   }
-// }
-
-// .table {
-//   // border: 1px solid black;
-//   i {
-//     font-size: 25px;
-//   }
-// }
-
 
 // Aside //
 
 .aside {
   // border: 1px solid $icon-color;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 10px;
   max-height: 450px;
   .slide {
     text-align: center;
     max-height: 400px;
     padding: 10px;
+    margin-bottom: 20px;
   }
 }
 
@@ -162,13 +160,42 @@ body {
   }
 }
 
-.chart {
-    padding: 10px;
-
+.next-hours {
   h3 {
     color: $icon-color;
     font-size: 1.4em;
     font-family: 'Quicksand Regular';
     margin-bottom: 20px;
+  }
+  ul {
+    margin-top: 20px;
+    max-height: 340px;
+    overflow-y:scroll;
+  }
+  li {
+    border: none;
+    padding-top: 0px;
+  }  
+  .single-hour {
+    position: relative;
+    padding: 5px;
+    border-bottom: 0.5px solid lighten($text-color, 50%);
+  }
+  .list-item {
+    display: inline-block;
+  }
+  .hour {
+    position: absolute;
+    left: 0;
+  }
+  .icon {
+    font-size: 1.2em;
+    color: darken($icon-color, 5%); 
+  }
+  .temp {
+    position: absolute;
+    right: 0;
+    font-family: 'Quicksand Regular';
+
   }
 }

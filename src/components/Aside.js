@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import Slider from 'react-slick';
-import { getWeatherIcon } from '../icons.js';
+import Slider from 'react-slick-with-mobile-in-mind';
+
 import Details from './Details';
-import ChartTemp from './ChartTemp';
+import NextHours from './NextHours';
 
 class Aside extends Component {
   render() {
@@ -15,18 +15,21 @@ class Aside extends Component {
     });
     const settings = {
       dots: true,
-      arrows: true
+      arrows: false,
+      infinite: false
     };
     return (
-      <div className="aside">
+      <div className="aside row">
         <Slider {...settings}>
           <div className="slide">
             <Details weather={this.props.details}/>
           </div>
           <div className="slide">
-            <ChartTemp temperature={hourTemp} hours={hours}/>
+            <NextHours weather={weather}/>
           </div>
-          <div className="slide">3</div>
+          <div className="slide">
+            3
+          </div>
           <div className="slide">4</div>
 
         </Slider>
@@ -36,53 +39,3 @@ class Aside extends Component {
 }
 
 export default Aside;
-
-
- // <div>
- //      {
- //        weather.map((hour, i) => {
- //          const time = new Date(hour.time * 1000);
- //          return(
- //            <div key={i} className="hourly">
- //              <strong>{moment(time).locale('pl').format('LT')}</strong>
- //              <i className={getWeatherIcon(hour.icon)}></i>
- //              <p>{Math.floor(hour.temperature)}&deg;C</p>
-
- //            </div>
- //          );
-          
- //        })
- //      }
- //      </div>
-
-
-// <div className="table-responsive">
-//         <table className="table">
-//           <thead>
-//             <tr>
-//               {
-//                 weather.map((hour, i) => {
-//                   const time = new Date(hour.time * 1000);
-//                   return <th key={i}>{moment(time).locale('pl').format('LT')}</th>;
-//                 })
-//               }
-//             </tr>
-//           </thead>  
-//           <tbody>  
-//             <tr>
-//               {
-//                 weather.map((hour, i) => {
-//                   return <th key={i}><i className={getWeatherIcon(hour.icon)}></i></th>;
-//                 })
-//               }
-//             </tr>
-//             <tr>
-//               {
-//                 weather.map((hour, i) => {
-//                   return <th key={i}>{Math.floor(hour.temperature)}&deg;C</th>;
-//                 })
-//               }
-//             </tr>
-//           </tbody>  
-//         </table>
-//       </div>
