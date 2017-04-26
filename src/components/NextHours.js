@@ -3,13 +3,13 @@ import moment from 'moment';
 import { getWeatherIcon } from '../icons.js';
 
 const NextHours = (props) => {
-  const { weather } = props;
+  const { hourly } = props;
   return (
     <div className="next-hours">
       <h3>Prognoza godzinowa</h3>
       <ul className="list-group">
         {
-          weather.map((hour, i) => {
+          hourly.map((hour, i) => {
             return (
               <li key={i} className="list-group-item">
                 <div className="single-hour">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
-import { getLocation } from '../weatherApi';
+import { getLocation } from '../locationApi';
 import { API_KEY } from '../config';
 import sampleData from '../sample-data';
 
@@ -62,20 +62,21 @@ class App extends Component {
           ? <div id="loading"></div>
           : <div className="container">
               <div className="col-md-8">
-              <Current 
-                weather={weather.currently} 
-                cityName={this.state.cityName}
-              />
-              <Forecast 
-                summary={weather.daily.summary}
-                weather={weather.daily.data.slice(1,7)}
-              />
+                <Current 
+                  weather={weather.currently} 
+                  cityName={this.state.cityName}
+                />
+                <Forecast 
+                  summary={weather.daily.summary}
+                  daily={weather.daily.data.slice(1,7)}
+                />
               </div>
               <div className="col-md-4">
                 <Aside 
-                weather={weather.hourly.data.slice(0, 24)}
-                details={weather.currently}
-              />
+                  details={weather.currently}
+                  hourly={weather.hourly.data.slice(0, 24)}
+                  daily={weather.daily.data}
+                />
               </div>
           </div>
         }

@@ -4,15 +4,11 @@ import Slider from 'react-slick-with-mobile-in-mind';
 
 import Details from './Details';
 import NextHours from './NextHours';
+import NextDays from './NextDays';
 
 class Aside extends Component {
   render() {
-    const { weather } = this.props; 
-    let hourTemp = [], hours = [];
-    weather.forEach(hour => {
-      hourTemp.push(hour.temperature);
-      hours.push(moment(hour.time * 1000).locale('pl').format('LT'));
-    });
+    const { details, hourly, daily } = this.props; 
     const settings = {
       dots: true,
       arrows: false,
@@ -22,16 +18,14 @@ class Aside extends Component {
       <div className="aside row">
         <Slider {...settings}>
           <div className="slide">
-            <Details weather={this.props.details}/>
+            <Details details={details} />
           </div>
           <div className="slide">
-            <NextHours weather={weather}/>
+            <NextHours hourly={hourly} />
           </div>
           <div className="slide">
-            3
+            <NextDays daily={daily} />
           </div>
-          <div className="slide">4</div>
-
         </Slider>
       </div>
     );
